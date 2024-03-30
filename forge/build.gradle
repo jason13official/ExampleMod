@@ -28,6 +28,8 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
+            args "-mixin.config=${mod_id}.forge.mixins.json"
+
             ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Client'
             property 'mixin.env.remapRefMap', 'true'
@@ -42,6 +44,8 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
+            args "-mixin.config=${mod_id}.forge.mixins.json"
+
             ideaModule "${rootProject.name}.${project.name}.main"
             taskName 'Server'
             property 'mixin.env.remapRefMap', 'true'
@@ -56,6 +60,8 @@ minecraft {
 
         data {
             workingDirectory project.file('run')
+            args "-mixin.config=${mod_id}.forge.mixins.json"
+
             ideaModule "${rootProject.name}.${project.name}.main"
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             taskName 'Data'
@@ -85,6 +91,12 @@ tasks.withType(JavaCompile).configureEach {
 
 processResources {
     from project(":common").sourceSets.main.resources
+}
+
+sourceSets.each {
+    def dir = layout.buildDirectory.dir("sourcesSets/$it.name")
+    it.output.resourcesDir = dir
+    it.java.destinationDirectory = dir
 }
 
 jar.finalizedBy('reobfJar')
