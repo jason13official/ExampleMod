@@ -1,4 +1,4 @@
-## THIS PROJECT WAS BUILT USING THE `MULTILOADER-TEMPLATE`
+## THIS PROJECT WAS BUILT USING `MULTILOADER-TEMPLATE`
 [https://github.com/jaredlll08/MultiLoader-Template/](https://github.com/jaredlll08/MultiLoader-Template/)
 
 ### DISCLAIMER
