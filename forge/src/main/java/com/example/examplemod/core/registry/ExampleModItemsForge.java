@@ -15,8 +15,9 @@ public class ExampleModItemsForge {
 	
 	public static final RegistryObject<Item> XENITH = registerItem("xenith", () -> new Item(new Item.Properties()));
 	
+	// registration methods
 	public static <T extends Item> RegistryObject<Item> registerItem(String name, Supplier<T> item) {
-		return ITEM.register(name, item::get);
+		return ITEM.register(name, item);
 	}
 	
 	public static void register(IEventBus bus) {

@@ -10,6 +10,7 @@ public class ExampleModItemsFabric {
 	
 	public static final Item XENITH = registerItem("xenith", new Item(new Item.Properties()));
 	
+	// registration methods
 	public static Item registerItem(String name, Item item) {
 		return Registry.register(BuiltInRegistries.ITEM, new ResourceLocation(ExampleModConstants.MOD_ID, name), item);
 	}

@@ -15,8 +15,9 @@ public class ExampleModItemsNeoForge {
 	
 	public static final DeferredHolder<Item, Item> XENITH = registerItem("xenith", () -> new Item(new Item.Properties()));
 	
+	// registration methods
 	public static <T extends Item> DeferredHolder<Item, Item> registerItem(String name, Supplier<T> item) {
-		return ITEM.register(name, item::get);
+		return ITEM.register(name, item);
 	}
 	
 	public static void register(IEventBus bus) {
