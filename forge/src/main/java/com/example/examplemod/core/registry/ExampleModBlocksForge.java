@@ -5,6 +5,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
@@ -19,7 +20,7 @@ public class ExampleModBlocksForge {
 	
 	public static final DeferredRegister<Block> BLOCK = DeferredRegister.create(ForgeRegistries.BLOCKS, ExampleModConstants.MOD_ID);
 	
-	public static final RegistryObject<Block> XENITH_BLOCK = registerBlock("xenith_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+	public static final RegistryObject<Block> XENITH_BLOCK = registerBlock("xenith_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresCorrectToolForDrops().strength(5.0F, 6.0F).sound(SoundType.METAL)));
 	
 	// registration methods
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
