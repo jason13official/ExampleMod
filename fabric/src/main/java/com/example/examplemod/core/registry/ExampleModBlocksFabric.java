@@ -14,7 +14,7 @@ import net.minecraft.world.level.material.MapColor;
 
 public class ExampleModBlocksFabric {
 	
-	public static final Block XENITH_BLOCK = registerBlock("xenith_block", new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+	public static final Block XENITH_BLOCK = registerBlock("xenith_block", new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
 	
 	// registration methods
 	private static Block registerBlock(String name, Block block) {

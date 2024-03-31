@@ -19,7 +19,7 @@ public class ExampleModBlocksNeoForge {
 	
 	public static final DeferredRegister<Block> BLOCK = DeferredRegister.create(BuiltInRegistries.BLOCK, ExampleModConstants.MOD_ID);
 	
-	public static final DeferredHolder<Block, Block> XENITH_BLOCK = registerBlock("xenith_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
+	public static final DeferredHolder<Block, Block> XENITH_BLOCK = registerBlock("xenith_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F)));
 	
 	// registration methods
 	private static <T extends Block> DeferredHolder<Block, T> registerBlock(String name, Supplier<T> block) {
