@@ -1,6 +1,9 @@
 package com.example.examplemod;
 
 
+import com.example.examplemod.core.registry.ExampleModBlocksNeoForge;
+import com.example.examplemod.core.registry.ExampleModCreativeModeTabNeoForge;
+import com.example.examplemod.core.registry.ExampleModItemsNeoForge;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -13,6 +16,10 @@ public class ExampleModNeoForge {
     public ExampleModNeoForge(IEventBus bus) {
         
         ExampleModCommon.init();
+        
+        ExampleModBlocksNeoForge.register(bus);
+        ExampleModItemsNeoForge.register(bus);
+        ExampleModCreativeModeTabNeoForge.register(bus);
         
         bus.addListener(this::serverSetup);
         bus.addListener(this::commonSetup);

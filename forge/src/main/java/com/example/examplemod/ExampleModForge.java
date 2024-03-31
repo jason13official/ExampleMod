@@ -1,5 +1,8 @@
 package com.example.examplemod;
 
+import com.example.examplemod.core.registry.ExampleModBlocksForge;
+import com.example.examplemod.core.registry.ExampleModCreativeModeTabForge;
+import com.example.examplemod.core.registry.ExampleModItemsForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -15,6 +18,10 @@ public class ExampleModForge {
         ExampleModCommon.init();
         
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        
+        ExampleModBlocksForge.register(bus);
+        ExampleModItemsForge.register(bus);
+        ExampleModCreativeModeTabForge.register(bus);
         
         bus.addListener(this::serverSetup);
         bus.addListener(this::commonSetup);
